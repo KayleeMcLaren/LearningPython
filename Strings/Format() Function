@@ -1,0 +1,49 @@
+# Format() Method - Empty Placeholder Replaced with a String Value
+
+print("Welcome to {} 101!".format("Python"))
+# Expected output:
+# Welcome to Python 101!
+
+# Format() Method - Empty Placeholder Replaced with a Numeric Value
+print("Welcome to Python {}! ".format("101"))
+# Expected output:
+# Welcome to Python 101!
+
+# Format() Method - Using Variable or Keyword Arguments Inside the Placeholder
+print("Welcome to {name} {num}!".format(name="Python", num="101"))
+# Expected output:
+# Welcome to Python 101!
+
+# Format() Method - Using Index or Positional Arguments Inside the Placeholder
+print("Welcome to {0} {1}!".format("Python", "101"))
+# Expected output:
+# Welcome to Python 101!
+
+# Format() Method - Using Multiple Placeholders Inside a String
+print("Python is a {} programming {} created by {} van Rossum".format("popular", "language", "Guido"))
+# Expected output:
+# Python is a popular programming language created by Guido van Rossum
+
+# Format() Method - With Class
+class MyClass:
+    msg1 = "Python"
+    msg2 = "programming"
+
+
+print("Welcome to {c.msg1} 101, {c.msg2} for everyone!".format(c=MyClass()))
+# Expected output:
+# Welcome to Python 101, programming for everyone!
+
+# Format() Method - With Dictionary
+my_dict = {'msg1': "Welcome", 'msg2': "Python"}
+print("{m[msg1]} to {m[msg2]} 101!".format(m=my_dict))
+# Expected output:
+# Welcome to Python 101!
+
+# Format() Method - Padding Variable Substitutions
+print("I have {:5} dogs and {:5} cat".format(2, 1))
+# Expected output:
+# I have     2 dogs and     1 cat
+print("I have {0:5} dogs and {1:5} cat".format(2, 1))  # index inside the placeholder
+# Expected output:
+# I have     2 dogs and     1 cat
