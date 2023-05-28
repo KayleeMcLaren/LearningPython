@@ -1,0 +1,51 @@
+# Split Strings
+word = "Python Programming is fun"
+print(word.split(' '))
+word = "PyCharm for Python Programming"
+print(word.split('r'))
+x = "PyCharm"
+x.replace("PyCharm", "Python")
+print(x)
+x = "PyCharm"
+x = x.replace("PyCharm", "Python")
+print(x)
+# Expected output:
+# ['Python', 'Programming', 'is', 'fun']
+# ['PyCha', 'm fo', ' Python P', 'og', 'amming']
+# PyCharm
+# Python
+
+# Split Strings - Into a List
+text = "Cherry Mango Watermelon Plum Apricot"
+# splits with string in the form of list
+list_1 = text.split()
+for st in list_1:
+    print(st)
+# Expected output:
+# Cherry
+# Mango
+# Watermelon
+# Plum
+# Apricot
+
+# Split Strings - By Application of the Max Split Operator
+text = 'Cherry Mango Watermelon Plum Apricot'
+split_1 = text.split(' ', 1)
+print(split_1)
+text = 'Cherry Mango Watermelon Plum Apricot'
+split_1 = text.split(' ', 3)
+print(split_1)
+# Expected output:
+# ['Cherry', 'Mango Watermelon Plum Apricot']
+# ['Cherry', 'Mango', 'Watermelon', 'Plum Apricot']
+
+# Split Strings - By Substring
+text = 'Cherry Mango Watermelon Plum Apricot'
+split_1 = text.split('Mango', 2)
+print(split_1[1])
+text = 'Cherry Mango Watermelon Plum Apricot'
+split_1 = text.split('Mango', 2)
+print(split_1[0])
+# Expected output:
+# Watermelon Plum Apricot
+# Cherry
