@@ -1,5 +1,4 @@
 # Count() Method - Count Occurrence of a Character in String
-
 str1 = "Hello World"
 str_count1 = str1.count('o')  # counting the character “o” in the given string
 print("The count of 'o' is", str_count1)
