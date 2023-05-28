@@ -1,5 +1,4 @@
 # Format() Method - Empty Placeholder Replaced with a String Value
-
 print("Welcome to {} 101!".format("Python"))
 # Expected output:
 # Welcome to Python 101!
