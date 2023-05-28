@@ -1,0 +1,182 @@
+# Dictionaries
+Dict = {'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}  # key = names, values = ages
+print((Dict['Tiffany']))
+
+# Expected output:
+# 22
+
+
+# Copying Dictionary
+Dict = {'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
+Boys = {'Tim': 18, 'Charlie': 12, 'Robert': 25}
+Girls = {'Tiffany': 22}
+studentX = Boys.copy()
+studentY = Girls.copy()
+print(studentX)
+print(studentY)
+
+# Expected output:
+# {'Tim': 18, 'Charlie': 12, 'Robert': 25}
+# {'Tiffany': 22}
+
+
+# Updating Dictionary
+Dict = {'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
+Dict.update({"Sarah": 9})
+print(Dict)
+
+# Expected output:
+# {'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25, 'Sarah': 9}
+
+
+# Delete Keys from the Dictionary
+Dict = {'Tim': 18, 'Charlie': 12,'Tiffany': 22,'Robert': 25}
+del Dict['Charlie']
+print(Dict)
+
+# Expected output:
+# {'Tim': 18, 'Tiffany': 22, 'Robert': 25}
+
+
+# Dictionary items() Method - returns a list of tuple pairs (Keys, Value) in the dictionary
+Dict = {'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
+print("Students Name: %s" % list(Dict.items()))
+
+# Expected output:
+# Students Name: [('Tim', 18), ('Charlie', 12), ('Tiffany', 22), ('Robert', 25)]
+
+
+# Check If a Given Key Already Exists in a Dictionary
+Dict = {'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
+Boys = {'Tim': 18, 'Charlie': 12, 'Robert': 25}
+Girls = {'Tiffany': 22}
+# Checks if all the names in the Boys dictionary exist in the Dict dictionary
+for key in list(Boys.keys()):
+    if key in list(Dict.keys()):
+        print(True)
+    else:
+        print(False)
+
+# Expected output:
+# True
+# True
+# True
+
+
+# Sorting the Dictionary
+Dict = {'Tim': 18,'Charlie':12,'Tiffany':22,'Robert':25}
+Boys = {'Tim': 18,'Charlie':12,'Robert':25}
+Girls = {'Tiffany':22}
+Students = list(Dict.keys())
+Students.sort()
+for S in Students:
+      print(":".join((S,str(Dict[S]))))
+
+# Expected output:
+# Charlie:12
+# Robert:25
+# Tiffany:22
+# Tim:18
+
+
+# Dictionary len() Method - gives the number of pairs in the dictionary
+Dict = {'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
+print("Length : %d" % len(Dict))
+
+# Expected output:
+# Length : 4
+
+
+# Variable Types - to determine the variable type
+Dict = {'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
+print("variable Type: %s" % type(Dict))
+
+# Expected output:
+# variable Type: <class 'dict'>
+
+
+# Dictionary Str(dict) -  make a dictionary into a printable string format
+Dict = {'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
+print("printable string:%s" % str(Dict))
+
+# Expected output:
+# printable string:{'Tim': 18, 'Charlie': 12, 'Tiffany': 22, 'Robert': 25}
+
+
+# Merging Dictionaries
+my_dict1 = {"username": "Lewis_Hamilton", "email": "lhamilton@gmail.com"}
+my_dict2 = {"team": "Mercedes", "nationality": "British"}
+my_dict1.update(my_dict2)
+print(my_dict1)
+
+# Expected output:
+# {'username': 'Lewis_Hamilton', 'email': 'lhamilton@gmail.com', 'team': 'Mercedes', 'nationality': 'British'}
+
+
+# Merging dictionaries using ** method  - ** is called Kwargs in Python
+my_dict1 = {"username": "Lewis_Hamilton", "email": "lhamilton@gmail.com"}
+my_dict2 = {"team": "Mercedes", "nationality": "British"}
+my_dict = {**my_dict1, **my_dict2}
+print(my_dict)
+
+# Expected output:
+# {'username': 'Lewis_Hamilton', 'email': 'lhamilton@gmail.com', 'team': 'Mercedes', 'nationality': 'British'}
+
+
+# Dictionary Membership Test - can be performed only on the key of a dictionary and not the value
+my_dict = {"username": "Lewis_Hamilton", "email": "lhamilton@gmail.com", 'team': 'Mercedes', 'nationality': 'British'}
+print("email" in my_dict)
+print("team" in my_dict)
+print("test" in my_dict)
+
+# Expected output:
+# True
+# True
+# False
+
+
+# Append an Element to a Key
+my_dict = {"Name": [], "Address": [], "Age": []}
+
+my_dict["Name"].append("Oscar")
+my_dict["Address"].append("Melbourne")
+my_dict["Age"].append(22)
+print(my_dict)
+# Expected output:
+# {'Name': ['Oscar'], 'Address': ['Melbourne'], 'Age': [22]}
+
+
+# Pop() method
+my_dict = {"username": "Oscar_Piastri", "email": "opiastri@gmail.com", 'team': 'McLaren', 'nationality': 'Australia'}
+my_dict.pop("email")
+print(my_dict)
+# Expected output:
+# {'Name': ['Oscar'], 'Address': ['Melbourne'], 'Age': [22]}
+
+
+# Appending Element(s) to a Dictionary
+my_dict = {"username": "Oscar_Piastri", "email": "opiastri@gmail.com", 'team': 'McLaren'}
+my_dict['nationality'] = 'Australian'
+print(my_dict)
+
+# Expected output:
+# {'username': 'Oscar_Piastri', 'email': 'opiastri@gmail.com', 'team': 'McLaren', 'nationality': 'Australian'}
+
+
+# Updating Existing Element(s) in a Dictionary
+my_dict = {'username': 'Oscar_Piastri', 'email': 'opiastri@gmail.com', 'team': 'McLaren', 'nationality': 'British'}
+my_dict["nationality"] = "Australian"
+print(my_dict)
+
+# Expected output:
+# {'username': 'Oscar_Piastri', 'email': 'opiastri@gmail.com', 'team': 'McLaren', 'nationality': 'Australian'}
+
+
+# Insert a Dictionary into Another Dictionary
+my_dict = {"username": "XYZ", "email": "xyz@gmail.com", "location": "Cape Town"}
+my_dict1 = {"firstName": "John", "lastName": "Smith"}
+my_dict["name"] = my_dict1
+print(my_dict)
+
+# Expected output:
+# {'username': 'XYZ', 'email': 'xyz@gmail.com', 'location': 'Cape Town', 'name': {'firstName': 'John', 'lastName': 'Smith'}}
