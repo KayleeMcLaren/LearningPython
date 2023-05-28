@@ -1,5 +1,4 @@
 # Len() Method - String
-
 str1 = "Hello World!"
 print("The length of the string  is :", len(str1))
 # Expected output:
