@@ -1,5 +1,4 @@
 # Strip() Method
-
 str1 = " Python is fun! "
 after_strip = str1.strip()
 print(after_strip)
