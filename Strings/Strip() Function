@@ -1,0 +1,27 @@
+# Strip() Method
+
+str1 = " Python is fun! "
+after_strip = str1.strip()
+print(after_strip)
+# Expected output:
+# Python is fun!
+
+# Strip() on Invalid Data Type
+myList = ["a", "b", "c", "d"]
+#print(myList.strip())
+# Expected output:
+# Traceback (most recent call last):
+#   File "teststrip.py", line 2, in <module>
+#     print(myList.strip())
+# AttributeError: 'list' object has no attribute 'strip'
+
+# Strip() With Character Parameter
+str1 = "****Hello World!****"
+after_strip = str1.strip("*")
+print(after_strip)
+str2 = "Python Programming 101!"
+after_strip1 = str2.strip("101!")
+print(after_strip1)
+# Expected output:
+# Hello World!
+# Python Programming
