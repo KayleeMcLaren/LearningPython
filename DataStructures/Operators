@@ -1,0 +1,143 @@
+# Arithmetic Operators - addition, subtraction, multiplication, division, %modulus, exponent, etc
+x = 4
+y = 5
+print(x + y)
+
+# Expected output:
+# 9
+
+
+# Comparison Operators - compares the values on either side of the operand and determines the relation between them
+x = 4
+y = 5
+print(('x > y  is', x > y))
+
+# Expected output:
+# ('x > y  is', False)
+
+
+# Assignment Operators - used for assigning the value of the right operand to the left operand
+num1 = 4
+num2 = 5
+print(("Line 1 - Value of num1 : ", num1))
+print(("Line 2 - Value of num2 : ", num2))
+
+# Expected output:
+# ('Line 1 - Value of num1 : ', 4)
+# ('Line 2 - Value of num2 : ', 5)
+
+
+# Compound Assignment Operator - consist of a binary operator and the simple assignment operator
+num1 = 4
+num2 = 5
+res = num1 + num2
+res += num1
+print(("Line 1 - Result of + is ", res))
+
+# Expected output:
+# ('Line 1 - Result of + is ', 13)
+
+
+# Not Equal Operator
+A = 44
+B = 284
+C = 284
+print(B != A)
+print(B != C)
+
+# Expected output:
+# True
+# False
+
+
+# Logical Operators - used for conditional statements are true or false
+a = True
+b = False
+print(('a and b is', a and b))
+print(('a or b is', a or b))
+print(('not a is', not a))
+
+# Expected output:
+# ('a and b is', False)
+# ('a or b is', True)
+# ('not a is', False)
+
+
+# Membership Operators - test for membership in a sequence such as lists, strings or tuples
+x = 4
+y = 8
+numList = [1, 2, 3, 4, 5]
+if x in numList:
+    print("Line 1 - x is available in the given list")
+else:
+    print("Line 1 - x is not available in the given list")
+if y not in numList:
+    print("Line 2 - y is not available in the given list")
+else:
+    print("Line 2 - y is available in the given list")
+
+# Identity Operators - compare the memory location of two objects
+x = 20
+y = 20
+if x is y:
+    print("x & y  SAME identity")
+y = 30
+if x is not y:
+    print("x & y have DIFFERENT identity")
+
+# Expected output:
+# Line 1 - x is available in the given list
+# Line 2 - y is not available in the given list
+
+
+# Operator precedence - determines which operators need to be evaluated first
+v = 4
+w = 5
+x = 8
+y = 2
+z = 0
+z = (v+w) * x / y
+print("Value of (v+w) * x/ y is ",  z)
+
+# Expected output:
+# Value of (v+w) * x/ y is  36.0
+
+
+# Not Equal Operator with IF Statement
+X = 5
+Y = 5
+if X != Y:
+    print("X is not equal to Y")
+else:
+    print("X is equal to Y")
+
+# Expected output:
+# X is equal to Y
+
+
+# Equal to (==) Operator with While Loop
+m = 300
+while m <= 305:
+    m = m + 1
+    if m % 2 == 0:
+        continue
+    print(m)
+
+# Expected output:
+# 301
+# 303
+# 305
+
+
+# Finding Even Numbers by Using Not Equal Operator
+m = 300
+while m <= 305:
+    m = m + 1
+    if m % 2 != 0:
+        continue
+print(m)
+
+# Expected output:
+# 302
+# 304
+# 306
