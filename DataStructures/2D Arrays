@@ -1,0 +1,117 @@
+# A Two Dimensional Array is defined as an Array inside the Array. The index of the array starts
+# with 0 and ends with a size of array minus 1
+
+# Create 2D Array
+array = [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+print(array)
+
+# Expected output:
+# [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+
+
+# Accessing the Values
+#creare 2D array with 4 rows and 5 columns
+array = [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+print(array)
+
+#get the first row
+print(array[0])
+#get the third row
+print(array[2])
+#get the first row third element
+print(array[0][2])
+#get the third row forth element
+print(array[2][3])
+
+# Expected output:
+# [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+# [23, 45, 43, 23, 45]
+# [89, 90, 87, 65, 44]
+# 43
+# 65
+
+
+# Access Elements Using for Loop
+# create 2D array with 4 rows and 5 columns
+array = [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+#use for loop to iterate the array
+for rows in array:
+    for columns in rows:
+        print(columns,end=" ")
+        print()
+
+# Expected output:
+# 23
+# 45
+# 43
+# 23
+# 45
+# 45
+# 67
+# 54
+# 32
+# 45
+# 89
+# 90
+# 87
+# 65
+# 44
+# 23
+# 45
+# 67
+# 32
+# 10
+
+
+# Inserting the Values
+# create 2D array with 4 rows and 5 columns
+array = [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+#insert this row at position 2 results in 5 rows
+array.insert(2, [1, 2, 3, 4, 5])
+#insert this row at position 2 results in 6 rows
+array.insert(2, [6, 7, 8, 9, 10])
+#insert this row at position 2 results in 7 rows
+array.insert(2, [11, 12, 13, 14, 15])
+print(array)
+
+# Expected output:
+# [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [11, 12, 13, 14, 15], [6, 7, 8, 9, 10], [1, 2, 3, 4, 5], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+
+
+# Updating the Values
+#creare 2D array with 4 rows and 5 columns
+array = [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+#update row values in the 3rd row
+array[2] = [0, 3, 5, 6, 7]
+#update row values in the 5th row
+array[2] = [0, 3, 5, 6, 7]
+#update the first row , third column
+array[0][2] = 100
+#update the second row , third column
+array[1][2] = 400
+print(array)
+
+# Expected output:
+# [[23, 45, 100, 23, 45], [45, 67, 400, 32, 45], [0, 3, 5, 6, 7], [23, 45, 67, 32, 10]]
+
+
+# Deleting the Values
+#creare 2D array with 4 rows and 5 columns
+array = [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+#delete row values in the 3rd row
+del array[2]
+#delete row values in the 2nd row
+del array[1]
+print(array)
+
+# Expected output:
+# [[23, 45, 43, 23, 45], [23, 45, 67, 32, 10]]
+
+
+# Get the Size of 2D Array
+#creare 2D array with 4 rows and 5 columns
+array = [[23, 45, 43, 23, 45], [45, 67, 54, 32, 45], [89, 90, 87, 65, 44], [23, 45, 67, 32, 10]]
+print(len(array))
+
+# Expected output:
+# 4
