@@ -1,0 +1,76 @@
+# Tuple Assignment
+tup1 = ("Daniel", "Ricciardo", "1989", "Australia", "Red Bull Racing")
+tup2 = (1, 2, 3, 4, 5, 6, 7)
+print(tup1[0])
+print(tup2[1:4])
+
+# Expected output:
+# Daniel
+# (2, 3, 4)
+
+
+# Packing and Unpacking
+x = ("Carlos", "Sainz", 1994)  # tuple packing
+(firstName, lastName, year) = x  # tuple unpacking
+print(firstName)
+print(lastName)
+print(year)
+
+# Expected output:
+# Carlos
+# Sainz
+# 1994
+
+
+# Comparing tuples
+# Case 1
+a = (5, 6)
+b = (1, 4)
+if a > b:
+    print("a is bigger")
+else:
+    print("b is bigger")
+
+# Expected output:
+# a is bigger
+
+
+# Case 2
+a = (5, 6)
+b = (5, 4)
+if a > b:
+    print("a is bigger")
+else:
+    print("b is bigger")
+
+# Expected output:
+# a is bigger
+
+
+# Case 3
+a = (5, 6)
+b = (6, 4)
+if a > b:
+    print("a is bigger")
+else:
+    print("b is bigger")
+
+# Expected output:
+# b is bigger
+
+
+# Using Tuples as Keys in Dictionaries
+a = {'x': 100, 'y': 200}
+b = a.items()
+print(b)
+
+# Expected output:
+# dict_items([('x', 100), ('y', 200)])
+
+
+# Slicing of Tuple
+x = ("a", "b", "c", "d", "e")
+print(x[2:4])
+
+# Expected output:
+# ('c', 'd')
