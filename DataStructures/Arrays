@@ -1,0 +1,121 @@
+import array as myarray
+
+# Create Arrays
+abc = myarray.array('d', [2.5, 4.9, 6.7])
+
+# Access Array Elements
+# Using its Index
+balance = myarray.array('i', [300, 200, 100])
+print(balance[1])
+
+abc = myarray.array('d', [2.5, 4.9, 6.7])
+print("Array first element is:", abc[0])
+print("Array last element is:", abc[-1])
+
+# Expected output:
+# 200
+# Array first element is: 2.5
+# Array last element is: 6.7
+
+
+# Using the ‘:’ Operator
+abc = myarray.array('q', [3, 9, 6, 5, 20, 13, 19, 22, 30, 25])
+print(abc[1:4])
+print(abc[7:10])
+
+# Expected output:
+# array('q', [9, 6, 5])
+# array('q', [22, 30, 25])
+
+
+# Insert Elements
+balance = myarray.array('i', [300, 200, 100])
+balance.insert(2, 150)
+print(balance)
+
+a = myarray.array('b', [2, 4, 6, 8, 10, 12, 14, 16, 18, 20])
+a.insert(2, 56)
+print(a)
+
+# Expected output:
+# array('i', [300, 200, 150, 100])
+# array('b', [2, 4, 56, 6, 8, 10, 12, 14, 16, 18, 20])
+
+
+# Modify Elements
+a = myarray.array('b', [3, 6, 4, 8, 10, 12, 14,16,18,20])
+a[0] = 99
+print(a)
+
+first = myarray.array('b', [4, 6, 8])
+second = myarray.array('b', [9, 12, 15])
+numbers = myarray.array('b')
+numbers = first + second
+print(numbers)
+
+# Expected output:
+# array('b', [99, 6, 4, 8, 10, 12, 14, 16, 18, 20])
+# array('b', [4, 6, 8, 9, 12, 15])
+
+
+# Pop an Element from Array
+first = myarray.array('b', [20, 25, 30])
+first.pop(2)
+print(first)
+
+# Expected output:
+# array('b', [20, 25])
+
+
+#  Use the ‘del’ Statement
+no = myarray.array('b', [10, 4, 5, 5, 7])
+del no[4]
+print(no)
+
+# Expected output:
+# array('b', [10, 4, 5, 5])
+
+
+# Delete Elements
+first = myarray.array('b', [2, 3, 4])
+first.remove(3)
+print(first)
+
+# Expected output:
+# array('b', [2, 4])
+
+
+# Search and Get the Index of a Value
+number = myarray.array('b', [2, 3, 4, 5, 6])
+print(number.index(3))
+
+# Expected output:
+# 1
+
+
+# Reverse an Array
+number = myarray.array('b', [1,2, 3])
+number.reverse()
+print(number)
+
+# Expected output:
+# array('b', [3, 2, 1])
+
+
+# Count the Occurrence of a Value
+number = myarray.array('b', [2, 3, 5, 4, 3, 3, 3])
+print(number.count(3))
+
+# Expected output:
+# 4
+
+
+# Traverse an Array
+balance = myarray.array('i', [300, 200, 100])
+for x in balance:
+    print(x)
+
+# Expected output:
+# 300
+# 200
+# 100
