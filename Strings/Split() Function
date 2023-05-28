@@ -1,5 +1,4 @@
 # Split Strings
-
 word = "Python Programming is fun"
 print(word.split(' '))
 word = "PyCharm for Python Programming"
