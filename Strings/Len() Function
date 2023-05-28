@@ -1,29 +1,38 @@
 # Len() Method - String
 str1 = "Hello World!"
 print("The length of the string  is :", len(str1))
+
 # Expected output:
 # The length of the string  is : 12
+
 
 # Len() Method - List
 list1 = ["Cherry", "Mango", "Watermelon", "Plum"]
 print("The length of the list is", len(list1))
+
 # Expected output:
 # The length of the list is : 4
+
 
 # Len() Method - Tuple
 Tup = ('Cherry', 'Mango', 'Watermelon', 'Plum', 'Apricot')
 print("The length of the tuple is", len(Tup))
+
 # Expected output:
 # The length of the tuple is 5
+
 
 # Len() Method - Dictionary
 Dict = {'Cherry': 18, 'Mango': 12, 'Watermelon': 22, 'Plum': 25}
 print("The length of the Dictionary is", len(Dict))
+
 # Expected output:
 # The length of the Dictionary is 4
+
 
 # Len() Method - Array
 arr1 = ['Cherry', 'Mango', 'Watermelon', 'Plum', 'Apricot']
 print("The length of the Array is", len(arr1))
+
 # Expected output:
 # The length of the Array is 5
