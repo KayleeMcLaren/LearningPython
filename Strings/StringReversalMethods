@@ -1,0 +1,121 @@
+# Methods to Reverse a String
+
+# Method 1 - For Loop
+
+def reverse_string(s):
+    # an empty string for storing reversed string
+    reversed_string = ""
+    # looping through the string
+    for char in string:
+        # reversing the string
+        reversed_string = char + reversed_string
+    # returning a reversed string
+    return reversed_string
+
+# the string to reverse
+string = "Python"
+# printing a message
+print(f"String Reversal using a for loop")
+# printing the original string
+print(f"Original String: {string}")
+# making a functional call inside a print function using an f-string
+print(f"Reversed String: {reverse_string(string)}")
+
+# Expected outcome:
+# String Reversal using a for loop
+# Original String: Python
+# Reversed String: nohtyP
+
+
+# Method 2 - While Loop
+
+string = "Python"
+# initializing an empty string to store the reversed string
+reversed_string = ""
+# printing a message
+print(f"String Reversal using a while loop")
+# printing the original string
+print(f"Original String: {string}")
+# find length of a string and store in count variable
+count = len(string)
+# a while loop for looping through the string characters
+while count > 0:
+    # save the value of str[count-1] in reversed_string
+    reversed_string += string[count - 1]
+    # decrementing index
+    count = count - 1
+print(f"Reversed String: {reversed_string}")
+
+# Expected outcome:
+# String Reversal using a while loop
+# Original String: Python
+# Reversed String: nohtyP
+
+
+# Method 3 - Slice Operator
+
+# function to reverse a string
+def reverse(s):
+    # the  slice syntax
+    reversed_string = s[::-1]
+    return reversed_string
+
+string = "Welcome to Python 101"
+# printing a message
+print(f"String Reversal using Slice Operator")
+# printing the original string
+print(f"Original String: {string}")
+# making a functional call inside a print function using an f-string
+print(f"Reversed String: {reverse(string)}")
+
+# Expected outcome:
+# String Reversal using Slice Operator
+# Original String: Welcome to Python 101
+# Reversed String: 101 nohtyP ot emocleW
+
+
+# Method 4 - reversed() Function
+
+def reverse(s):
+    # reversed() function inside the join() function
+    string = "".join(reversed(s))
+    # returning the reversed string
+    return string
+
+string = "Watermelon"
+# printing a message
+print(f"String Reversal using reversed() function")
+# printing the original string
+print(f"Original String: {string}")
+# making a functional call inside a print function using an f-string
+print(f"Reversed String: {reverse(string)}")
+
+# Expected outcome:
+# String Reversal using reversed() function
+# Original String: Watermelon
+# Reversed String: nolemretaW
+
+
+# Method 5 - Recursion
+
+def reverse(s):
+    # Checking the length of string
+    if len(s) == 0:
+        return s
+    # reversing string if len(string) != 0
+    else:
+        # recursively calling the reverse() function
+        return reverse(s[1:]) + s[0]
+
+string = "Apricot"
+# printing a message
+print(f"String Reversal using Recursion")
+# printing the original string
+print(f"Original String: {string}")
+# making a functional call inside a print function using an f-string
+print(f"Reversed String: {reverse(string)}")
+
+# Expected outcome:
+# String Reversal using Recursion
+# Original String: Apricot
+# Reversed String: tocirpA
