@@ -1,0 +1,48 @@
+# Python Strings: Replace, Uppercase & Lowercase, Join, Reverse
+
+# Accessing Values in Strings
+var1 = "Hello World!"
+var2 = "Python Programming"
+print("var1[0]:", var1[0])
+print("var2[1:5]:", var2[1:5])
+# Expected output:
+# var1[0]: H
+# var2[1:5]: ytho
+
+# Some more examples
+x = "Hello World!"
+print(x[:6])
+print(x[0:6] + "Python")
+# Expected output:
+# Hello
+# Hello Python
+
+# Python String replace() Method
+oldString = 'I like Python'
+newString = oldString.replace('like', 'love')
+print(newString)
+# Expected output:
+# I love Python
+
+# Changing upper and lower case strings
+string = "python string manipulation"
+print(string.upper())
+string = "python string manipulation"
+print(string.capitalize())
+string = "PYTHON STRING MANIPULATION"
+print(string.lower())
+# Expected output:
+# PYTHON STRING MANIPULATION
+# Python string manipulation
+# python string manipulation
+
+# Using "join" function for the string
+print(":".join("Python"))
+# Expected output:
+# P:y:t:h:o:n
+
+# Reversing String
+string = "12345"
+print(''.join(reversed(string)))
+# Expected output:
+# 54321
