@@ -1,42 +1,53 @@
 # Find() Method - With Default Values
 myString = "Welcome to Python Programming 101!"
 print("The position of Python is at:", myString.find("Python"))
+
 # Expected output:
 # The position of Python is at: 11
+
 
 # Find() Method - Using Start Argument
 mystring = "Welcome to Python Programming 101!"
 print("The position of Programming is at:", mystring.find("Programming", 5))  # specify the start position, from where the search will begin
+
 # Expected output:
 # The position of Programming is at: 18
+
 
 # Find() Method - Using Start and End Arguments
 mystring = "Welcome to Python Programming 101!"
 print("The position of Python is at:", mystring.find("Python", 5, 20))
+
 # Expected output:
 # The position of Python is at: 11
+
 
 # Find() Method - Find the Position of a Given Substring in a String
 myString = "Python is an ideal choice for beginners who are just starting out in the field of programming"
 print("The position of for beginners Substring  is at:", myString.find("for beginners", 5, 40))
 print("The position of starting is at:", myString.find("starting", 20))
+
 # Expected output:
 # The position of for beginners Substring  is at: 26
 # The position of starting is at: 53
+
 
 # Find() Method - rfind() (gives the highest (last) index for the substring given)
 myString = "Python programming is an ideal choice for beginners who are just starting out in the field of programming "
 print("The position of programming  using find() : ", myString.find("programming "))
 print("The position of programming  using rfind() : ", myString.rfind("programming "))
+
 # Expected output:
 # The position of programming  using find() :  7
 # The position of programming  using rfind() :  94
+
 
 # Index() Method
 # Index() will throw an exception if the substring is not present in the string, while find() will return -1.
 myString = "Welcome to Python Programming 101!"
 print("The position of Code using find() : ", myString.find("Code"))
 print("The position of Code using index() : ", myString.index("Code"))
+
 # Expected output:
 # The position of Code using find() :  -1
 # Traceback (most recent call last):
@@ -44,6 +55,7 @@ print("The position of Code using index() : ", myString.index("Code"))
 #     print("The position of Code using index() : ", myString.index("Code"))
 #                                                    ^^^^^^^^^^^^^^^^^^^^^^
 # ValueError: substring not found
+
 
 # Find() Method - The Total Occurrence of a Substring
 my_string = "test string, testing, test string, testing, test string, testing"
@@ -62,5 +74,7 @@ for i in range(len(my_string)):
         k = 0
 
 print("The total count of substring test is: ", count)
+
 # Expected output:
 # The total count of substring test is:  3
+
