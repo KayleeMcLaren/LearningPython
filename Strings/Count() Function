@@ -4,9 +4,11 @@ str_count1 = str1.count('o')  # counting the character “o” in the given stri
 print("The count of 'o' is", str_count1)
 str_count2 = str1.count('o', 0, 5)
 print("The count of 'o' using start/end is", str_count2)
+
 # Expected output:
 # The count of 'o' is 2
 # The count of 'o' using start/end is 1
+
 
 # Count() Method - Count Occurrence of a Substring in String
 str1 = "Python is a great and friendly language to use and learn."
@@ -14,6 +16,7 @@ str_count1 = str1.count('great')  # counting the substring “great” in the gi
 print("The count of 'great' is", str_count1)
 str_count2 = str1.count('great', 10, 20)  # counting the substring “great” within the given start/end index
 print("The count of 'great' using start/end is", str_count2)
+
 # Expected output:
 # The count of 'great' is 1
 # The count of 'great' using start/end is 1
