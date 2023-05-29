@@ -1,0 +1,111 @@
+# Index() Method
+
+# Find the Index of the Given Element
+my_list = ['A', 'B', 'C', 'D', 'E', 'F']
+print("The index of element C is ", my_list.index('C'))
+print("The index of element F is ", my_list.index('F'))
+
+# Expected output
+# The index of element C is  2
+# The index of element F is  5
+
+
+# Using Start and End in index() -  limit searching for index in a list using start and end index
+my_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+print("The index of element C is ", my_list.index('C', 1, 5))
+print("The index of element F is ", my_list.index('F', 3, 7))
+# using just the start index
+print("The index of element D is ", my_list.index('D', 1))
+
+# Expected output
+# The index of element C is  2
+# The index of element F is  5
+# The index of element D is  3
+
+
+# Index() Method With an Element That is Not Present
+my_list = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
+print("The index of element C is ", my_list.index('Z'))
+
+# Expected output
+# Traceback (most recent call last):
+# File "display.py", line 3, in <module>
+# print("The index of element C is ", my_list.index('Z'))
+# ValueError: 'Z' is not in list
+
+
+# Using For Loop to Get the Index of an Element in a List
+my_list = ['blue', 'yellow', 'orange', 'pink', 'white', 'red']
+all_indexes = []
+for i in range(0, len(my_list)):
+    if my_list[i] == 'yellow':
+        all_indexes.append(i)
+print("Original list ", my_list)
+print("Indexes for element Guru : ", all_indexes)
+
+# Expected output
+# Original list  ['blue', 'yellow', 'orange', 'pink', 'white', 'red']
+# Indexes for element Guru :  [1]
+
+
+# Using While Loop and list.index()
+my_list = ['pink', 'blue', 'yellow', 'orange', 'pink', 'white', 'red', 'pink']
+result = []
+elementIndex = -1
+while True:
+    try:
+        elementIndex = my_list.index('pink', elementIndex + 1)
+        result.append(elementIndex)
+    except ValueError:
+        break
+print("Original List is ", my_list)
+print("The index for element Pink is ", result)
+
+# Expected output
+# Original List is  ['blue', 'yellow', 'orange', 'pink', 'white', 'red']
+# The index for element Pink is  [0, 4, 7]
+
+
+# Using While Loop and list.index()
+my_list = ['pink', 'blue', 'yellow', 'orange', 'pink', 'white', 'red', 'pink']
+print("Original list ", my_list)
+all_indexes = [a for a in range(len(my_list)) if my_list[a] == 'pink']
+print("Indexes for element Pink: ", all_indexes)
+
+# Expected output
+# Original list  ['pink', 'blue', 'yellow', 'orange', 'pink', 'white', 'red', 'pink']
+# Indexes for element Pink:  [0, 4, 7]
+
+
+# Using Enumerate to Get the Index of an Element
+my_list = ['pink', 'blue', 'yellow', 'orange', 'pink', 'white', 'red', 'pink']
+print("Original list ", my_list)
+print("Indexes for element Guru : ", [i for i, e in enumerate(my_list) if e == 'pink'])
+
+# Expected output
+# Original list  ['pink', 'blue', 'yellow', 'orange', 'pink', 'white', 'red', 'pink']
+# Indexes for element Guru :  [0, 4, 7]
+
+
+# Using Filter to Get the Index of an Element
+my_list = ['pink', 'blue', 'yellow', 'orange', 'pink', 'white', 'red', 'pink']
+print("Original list ", my_list)
+all_indexes = list(filter(lambda i: my_list[i] == 'pink', range(len(my_list))))
+print("Indexes for element Pink : ", all_indexes)
+
+# Expected output
+# Original list  ['pink', 'blue', 'yellow', 'orange', 'pink', 'white', 'red', 'pink']
+# Indexes for element Pink :  [0, 4, 7]
+
+
+# Using NumPy to Get the Index of an Element
+import numpy as np
+my_list = ['pink', 'blue', 'yellow', 'orange', 'pink', 'white', 'red', 'pink']
+np_array = np.array(my_list)
+item_index = np.where(np_array == 'pink')[0]
+print("Original list ", my_list)
+print("Indexes for element Pink :", item_index)
+
+# Expected output
+# Original list  ['pink', 'blue', 'yellow', 'orange', 'pink', 'white', 'red', 'pink']
+# Indexes for element Pink : [0 4 7]
