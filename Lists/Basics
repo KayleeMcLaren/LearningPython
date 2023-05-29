@@ -1,0 +1,244 @@
+# Lists - assign, accessing values, slicing, update list, remove values, append value,
+# len(), max(), min(), list(tuple), list.append(), list.pop(), list.remove(), list.reverse(),
+# list.index(), sum(list), looping through list, list comprehensions
+
+# Homogenous Lists
+listOfIntegers = [1, 2, 3, 8, 33]
+listOfStrings = ['John', 'Travis', 'Sheila']
+listOfFloatingNumbers = [2.2, 4.5, 9.8, 10.4]
+
+# Heterogeneous Lists
+mixedList1 = [2, 'cat', 34.33, 'Travis']
+mixedList2 = [2.22, 33, 'pen']
+
+# Accessing Values
+list = [3, 22, 30, 5.3, 20]
+print(list[0])
+print(list[1])
+print(list[2])
+print(list[3])
+print(list[4])
+print(list[-1])  # use -1 to access the last value
+
+# Expected output:
+# 3
+# 22
+# 30
+# 5.3
+# 20
+# 20
+
+
+# List Slicing - splitting a subset of a list
+list = [3, 22, 30, 5.3, 20]
+print(list[:])  # all the members of the list
+print(list[1:3])  # value from index 1 to index 3, without value at index 3
+print(list[:4])  # value from index 0 to index 4, without value at index 4
+print(list[2:-1])  # value from index 2, to the second to the last element in the list, which is 5.3
+
+# Expected output:
+# [3, 22, 30, 5.3, 20]
+# [22, 30]
+# [3, 22, 30, 5.3]
+# [30, 5.3] - Python lists are upper-bound exclusive, therefore the last index during list slicing is usually ignored
+
+
+# Updating Lists
+list = ["physics", "chemistry", "mathematics"]
+list[0] = "biology"
+print(list)
+
+integers = [2, 5, 9, 20, 27]
+integers[-1] = 30.5
+print(integers)
+
+# Expected output:
+# ['biology', 'chemistry', 'mathematics']
+# [2, 5, 9, 20, 30.5]
+
+
+# Deleting List Elements - 3 methods
+list = [3, 5, 7, 8, 9, 20]
+# To remove the first value (3):
+list.remove(3)
+list.pop[0]
+del list[0]
+
+# Append Value to List
+list_1 = [3, 5, 7, 8, 9, 20]
+list_1.append(3.33)
+print(list_1)
+list_1.append("cats")
+print(list_1)
+
+# Expected output:
+# list_1 = [3, 5, 7, 8, 9, 20, 3.33]
+# list_1 = [3, 5, 7, 8, 9, 20, 3.33, "cats"]
+
+
+# Len(list) Method - gives the length of the list
+numbers = [2, 5, 7, 9]
+print(len(numbers))
+
+# Expected output:
+# 4
+
+
+# Max(list) Method - returns the item in the list with the maximum value
+numbers = [2, 5, 7, 9]
+print(max(numbers))
+
+# Expected output:
+# 9
+
+
+# Min(list) Method - returns the item in the list with the minimum value
+numbers = [2, 5, 7, 9]
+print(min(numbers))
+
+# Expected output:
+# 2
+
+
+# List(tuple) Method - converts a tuple object a list
+animals = ("cat", "dog", "fish", "cow")
+print(list(animals))
+
+# Expected output:
+# [cat, dog, fish, cow]
+
+
+# List.append(element) - appends the element to the list
+numbers = [2, 5, 7, 9]
+numbers.append(15)
+print(numbers)
+
+# Expected output:
+# [2, 5, 7, 9, 15]
+
+
+# List.pop(index) - removes the element at the specified index from the list
+numbers = [2, 5, 7, 9, 15]
+numbers.pop(2)
+print(numbers)
+
+# Expected output:
+# [2, 5, 9, 15]
+
+
+# List.remove(element) - deletes the element from the list
+values = [2, 5, 7, 9]
+values.remove(2)
+print(values)
+
+# Expected output:
+# [5, 7, 9]
+
+
+# List.reverse() - reverses the objects of the list
+values = [2, 5, 7, 10]
+values.reverse()
+print(values)
+
+# Expected output:
+# [10, 7, 5, 2]
+
+
+# List.index(element) - to get the index value of an element within the list
+animals = ['cat', 'dog', 'fish', 'cow', 'goat']
+fish_index = animals.index('fish')
+print(fish_index)
+
+# Expected output:
+# 2
+
+
+# Sum(list) - to get the sum of all the values in the list (if they are integers/decimals)
+values = [2, 5, 10]
+sum_of_values = sum(values)
+print(sum_of_values)
+
+# Expected output:
+# 17
+
+
+# List.sort()
+# To sort the values in ascending order:
+values = [1, 7, 9, 3, 5]
+values.sort()
+print(values)
+
+# Expected output:
+# [1, 3, 5, 7, 9]
+
+# To sort the values in descending order:
+values = [2, 10, 7, 14, 50]
+values.sort(reverse=True)
+print(values)
+
+# Expected output:
+# [50, 14, 10, 7, 2]
+
+
+# Sorted(list, key=value) - to sort the list by length of the elements
+strings = ['cat', 'mammal', 'goat', 'is']
+sort_by_length = sorted(strings, key=len)
+print(sort_by_length)
+
+# Expected output:
+# [50, 14, 10, 7, 2]
+
+
+# Looping through Lists
+# loop through all the elements of this list, add 5 to each element
+list = [10, 20, 30, 40, 50, 60, 70]
+for element in list:
+    element = element + 5
+    print(element)
+
+# Expected output:
+# 15
+# 25
+# 35
+# 45
+# 55
+# 65
+# 75
+
+# loop through the first three elements of the list, and delete all of them
+list = [10, 20, 30, 40, 50, 60, 70]
+for element in list[:3]:
+    list.remove(element)
+print(list)
+
+# Expected output:
+# [40, 50, 60, 70]
+
+# loop through the 3rd (index 2) to last element on the list, and append them to a new list called new_list
+list = [10, 20, 30, 40, 50, 60, 70]
+new_list = []
+for element in list[2:]:
+        new_list.append(element)
+print("new_list:{}".format(new_list))
+
+# Expected output:
+# new_list:[30, 40, 50, 60, 70]
+
+
+# List Comprehension - offers a shorter syntax when you want to create a new list based on the values of an existing list
+# create a list which contains the squares of all the numbers from 1 to 9 using for loop:
+listOfSquares= []
+for int in range(1, 10):
+        square = int ** 2
+        listOfSquares.append(square)
+print(listOfSquares)
+
+# Expected output:
+# [1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+# create a list which contains the squares of all the numbers from 1 to 9 using list comprehension
+listOFSquares = [int**2 for int in range(1, 10)]
+print('List of squares using list comprehension: {}'.format(listOFSquares))
+
+# Expected output:
+# List of squares using list comprehension: [1, 4, 9, 16, 25, 36, 49, 64, 81]
