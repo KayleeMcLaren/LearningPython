@@ -1,0 +1,43 @@
+# 4 Methods to Find the Average of a List
+
+# Method 1 - Loop
+def cal_average(num):
+    sum_num = 0
+    for t in num:
+        sum_num = sum_num + t
+
+    avg = sum_num / len(num)
+    return avg
+print("The average is", cal_average([18, 25, 3, 41, 5]))
+
+# Expected output:
+# The average is 18.4
+
+
+# Method 2 -  Using sum() and len() built-in functions
+number_list = [45, 34, 10, 36, 12, 6, 80]
+avg = sum(number_list)/len(number_list)
+print("The average is ", round(avg,2))
+
+# Expected output:
+# The average is  31.86
+
+
+# Method 3 -  Using Mean Function from Statistics Module
+from statistics import mean
+number_list = [45, 34, 10, 36, 12, 6, 80]
+avg = mean(number_list)
+print("The average is ", round(avg, 2))
+
+# Expected output:
+# The average is  31.86
+
+
+# Method 4 - Using mean() from NumPy Library
+# Example to find average of list
+from numpy import mean
+number_list = [45, 34, 10, 36, 12, 6, 80]
+avg = mean(number_list)
+print("The average is ", round(avg, 2))
+# Expected output:
+# The average is  31.86
