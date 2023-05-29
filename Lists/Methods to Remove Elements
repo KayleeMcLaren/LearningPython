@@ -1,0 +1,171 @@
+# Methods to Remove and Element from a List
+
+# remove() method - remove an element from the list
+my_list = [12, 'Apple', 'Pear', 14, 'Litchi', 12, 'Orange']
+my_list.remove(12)  # it will remove the element 12 at the start.
+print(my_list)
+my_list.remove('Litchi')  # will remove the first Litchi from the list
+print(my_list)
+my_list.remove(100)  # will throw an error
+print(my_list)
+
+# Expected outcome
+# ['Apple', 'Pear', 14, 'Litchi', 12, 'Orange']
+# ['Apple', 'Pear', 14, 12, 'Orange']
+# Traceback (most recent call last):
+#   File "C:\Users\mclar\PycharmProjects\pythonBasics\pythonStrings.py", line 9, in <module>
+#     my_list.remove(100)  #will throw an error
+#     ^^^^^^^^^^^^^^^^^^^
+# ValueError: list.remove(x): x not in list
+
+
+# Pop() method - removes an element from the list based on the index given
+# By passing index as 2 to remove Apple
+name = my_list.pop(2)
+print(name)
+print(my_list)
+
+# Expected outcome
+# Pear
+# [12, 'Apple', 14, 'Litchi', 12, 'Orange']
+
+# Pop() method without index – returns the last element
+item = my_list.pop()
+print(item)
+print(my_list)
+
+# Expected outcome
+# Orange
+# [12, 'Apple', 14, 'Litchi', 12]
+
+# Passing index out of range
+item = my_list.pop(15)
+print(item)
+print(my_list)
+
+# Expected outcome
+# Traceback (most recent call last):
+#   File "C:\Users\mclar\PycharmProjects\pythonBasics\test.py", line 14, in <module>
+#     item = my_list.pop(15)
+#            ^^^^^^^^^^^^^^^
+# IndexError: pop index out of range
+
+
+# Clear() method - will empty the given list
+my_list = [12, 'Apple', 'Pear', 14, 'Litchi', 12, 'Orange']
+# Using clear() method
+element = my_list.clear()
+print(element)
+print(my_list)
+
+# Expected outcome
+# None
+# []
+
+
+# Using del Keyword
+# Either an index or range must be passed to the list
+
+my_list = list(range(15))
+print("The Original list is ", my_list)
+
+# To remove the first element
+del my_list[0]
+print("After removing first element", my_list)
+
+# To remove last element
+del my_list[-1]
+print("After removing last element", my_list)
+
+# To remove element for given index : for example index:5
+del my_list[5]
+print("After removing element from index:5", my_list)
+
+# To remove last 2 elements from the list
+del my_list[-2]
+print("After removing last 2 elements", my_list)
+
+# To remove multiple elements
+del my_list[1:5]
+print("After removing multiple elements from start:stop index (1:5)", my_list)
+
+# To remove multiple elements
+del my_list[4:]
+print("To remove elements from index 4 till the end (4:)", my_list)
+
+# Expected output
+# The Original list is  [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+# After removing first element [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+# After removing last element [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+# After removing element from index:5 [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12, 13]
+# After removing last 2 elements [1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 13]
+# After removing multiple elements from start:stop index (1:5) [1, 7, 8, 9, 10, 11, 13]
+# To remove elements from index 4 till the end (4:) [1, 7, 8, 9]
+
+
+# Remove the First Element from a List
+my_list1 = ['A', 'B', 'C', 'D', 'E', 'F']
+print("The Original list is ", my_list1)
+
+# Using remove() to remove first element
+my_list1.remove('A')
+print("Using remove(), the final list is ", my_list1)
+
+my_list1 = ['A', 'B', 'C', 'D', 'E', 'F']
+print("The Original list is ", my_list1)
+
+# Using pop() to remove the first element
+element = my_list1.pop(0)
+print("The first element removed from my_list1 is ", element)
+print("Using pop(), the final list is ", my_list1)
+
+# Using del to remove the first element
+my_list2 = ['A', 'B', 'C', 'D', 'E', 'F']
+del my_list2[0]
+print("Using del, the final list is ", my_list2)
+
+# Expected output
+# The Original list is  ['A', 'B', 'C', 'D', 'E', 'F']
+# Using remove(), the final list is  ['B', 'C', 'D', 'E', 'F']
+# The Original list is  ['A', 'B', 'C', 'D', 'E', 'F']
+# The first element removed from my_list1 is  A
+# Using pop(), the final list is  ['B', 'C', 'D', 'E', 'F']
+# Using del, the final list is  ['B', 'C', 'D', 'E', 'F']
+
+
+# Remove Multiple Elements from a List
+# Using del to remove the multiple elements from list
+my_list2 = ['A', 'B', 'C', 'D', 'E', 'F']
+print("Original list is ", my_list2)
+del my_list2[1:4]
+print("Using del, the final list is ", my_list2)
+my_list2 = ['A', 'B', 'C', 'D', 'E', 'F']
+del my_list2[0]
+print("Using del, the final list is ", my_list2)
+
+# Expected output
+# Original list is  ['A', 'B', 'C', 'D', 'E', 'F']
+# Using del, the final list is  ['A', 'E', 'F']
+# Using del, the final list is  ['B', 'C', 'D', 'E', 'F']
+
+
+# Remove an Element from a List by Using Index
+# Using del to remove the multiple elements from list
+my_list1 = ['A', 'B', 'C', 'D', 'E', 'F']
+print("Original list is ", my_list1)
+element = my_list1.pop(2)
+print("Element removed for index: 2 is ", element)
+print("Using pop, the final list is ", my_list1)
+
+# Using del to remove the multiple elements from list
+my_list2 = ['A', 'B', 'C', 'D', 'E', 'F']
+print("Original list is ", my_list2)
+del my_list2[2]
+print("Using del, the final list is ", my_list2)
+
+# Expected output
+# Original list is  ['A', 'B', 'C', 'D', 'E', 'F']
+# Element removed for index: 2 is  C
+# Using pop, the final list is  ['A', 'B', 'D', 'E', 'F']
+# Original list is  ['A', 'B', 'C', 'D', 'E', 'F']
+# Using del, the final list is  ['A', 'B', 'D', 'E', 'F']
