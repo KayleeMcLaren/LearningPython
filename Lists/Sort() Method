@@ -1,0 +1,73 @@
+# Sort() Method
+
+# Sorting a List in Ascending Order
+base_list = ["Google", "Reliance", "Python", "Content", "Syntax"]
+base_list.sort()
+print("the base list after sorting is", base_list)
+
+# Expected output
+# the base list after sorting is ['Content', 'Google', 'Python', 'Reliance', 'Syntax']
+
+
+# Sorting a List in Descending Order
+base_list = [100, 600, 400, 8000, 50]
+base_list.sort()
+print("the base list after sorting is", base_list)
+# Reverse Order
+base_list.sort(reverse=True)
+print("the base list after REVERSE sorting is", base_list)
+
+# Expected output
+# the base list after sorting is [50, 100, 400, 600, 8000]
+# the base list after REVERSE sorting is [8000, 600, 400, 100, 50]
+
+
+# Sorting a List of Tuples
+base_list = [('Blue', 2020, 500),('Green', 2022, 300),('Purple', 2019, 1070)]
+
+def get_key(base_list):
+    return base_list[2]  # customized function sorts using the second element of the tuple
+
+base_list.sort(key=get_key,reverse=True)
+print("The change in base list is as follows", base_list)
+
+# Expected output
+# The change in base list is as follows [('Purple', 2019, 1070), ('Blue', 2020, 500), ('Green', 2022, 300)]
+
+
+# Sorting list Items Using Len as Key Parameter
+base_list = ["Google", "Reliance", "Python", "Content", "Syntax"]
+base_list.sort(key=len)
+print("The sorted list based on length:", base_list)
+
+# Expected output
+# The sorted list based on length: ['Google', 'Python', 'Syntax', 'Content', 'Reliance']
+
+
+# Reverse Sorting Using Len as Key Parameter
+base_list = ["pink", "purple", "blue", "yellow", "red"]
+base_list.sort(key=len, reverse=True)
+print("The sorted list based on length:", base_list)
+
+# Expected output
+# The sorted list based on length: ['purple', 'yellow', 'pink', 'blue', 'red']
+
+
+# Difference Between the Sort Method and Sorted Method
+#Use of the Sorted method
+Base_list = [11, 10, 9, 8, 7, 6]
+print("the original list is", Base_list)
+New_list = sorted(Base_list)
+print("the New list using sorted method is", New_list)
+
+#Use of the Sort method
+Base_list = [11, 10, 9, 8, 7, 6]
+print("the original list is", Base_list)
+New_list = Base_list.sort()
+print("the New list using sort method is", New_list)
+
+# Expected output
+# the original list is [11, 10, 9, 8, 7, 6]
+# the New list using sorted method is [6, 7, 8, 9, 10, 11] - sorted method creates a new list 
+# the original list is [11, 10, 9, 8, 7, 6]
+# the New list using sort method is None - sort() method does not create a new list
