@@ -1,0 +1,85 @@
+# Methods to Remove Duplicates from a List
+
+# Method 1 - Remove Duplicates from List Using Set()
+my_list = [1, 1, 2, 3, 2, 2, 4, 5, 6, 2, 1]
+my_final_list = set(my_list)
+print(list(my_final_list))
+
+# Expected output
+# [1, 2, 3, 4, 5, 6]
+
+
+# Method 2 - Using a Temporary List
+my_list = [1, 2, 3, 1, 2, 4, 5, 4 ,6, 2]
+print("List Before ", my_list)
+temp_list = []
+for i in my_list:
+    if i not in temp_list:
+        temp_list.append(i)
+
+my_list = temp_list
+print("List After removing duplicates ", my_list)
+
+# Expected output
+# List Before  [1, 2, 3, 1, 2, 4, 5, 4, 6, 2]
+# List After removing duplicates  [1, 2, 3, 4, 5, 6]
+
+
+# Method 3 - Using Dict
+my_list = ['a','x','a','y','a','b','b','c']
+my_final_list = dict.fromkeys(my_list)
+print(list(my_final_list))
+
+# Expected output
+# ['a', 'x', 'y', 'b', 'c']
+
+
+# Method 4 - Using For Loop
+my_list = [1, 2, 2, 3, 1, 4, 5, 1, 2, 6]
+myFinalList = []
+for i in my_list:
+    if i not in myFinalList:
+        myFinalList.append(i)
+print(list(myFinalList))
+
+# Expected output
+# [1, 2, 3, 4, 5, 6]
+
+
+# Method 5 - Using List Comprehension
+my_list = [1, 2, 2, 3, 1, 4, 5, 1, 2, 6]
+my_finalList = []
+[my_finalList .append(n) for n in my_list if n not in my_finalList]
+print(my_finalList)
+
+# Expected output
+# [1, 2, 3, 4, 5, 6]
+
+
+# Method 6 - Using Numpy Unique() Method
+import numpy as np
+my_list = [1, 2, 2, 3, 1, 4, 5, 1, 2, 6]
+myFinalList = np.unique(my_list).tolist()
+print(myFinalList)
+
+# Expected output
+# [1, 2, 3, 4, 5, 6]
+
+
+# Method 7 - Using Pandas Method
+import pandas as pd
+my_list = [1, 2, 2, 3, 1, 4, 5, 1, 2, 6]
+myFinalList = pd.unique(my_list).tolist()
+print(myFinalList)
+
+# Expected output
+# [1, 2, 3, 4, 5, 6]
+
+
+# Method 8 - Using enumerate() and list comprehension
+my_list = [1, 2, 2, 3, 1, 4, 5, 1, 2, 6]
+my_finalList = [i for j, i in enumerate(my_list) if i not in my_list[:j]]
+print(list(my_finalList))
+
+# Expected output
+# [1, 2, 3, 4, 5, 6]
