@@ -1,6 +1,6 @@
 # Lists - assign, accessing values, slicing, update list, remove values, append value,
 # len(), max(), min(), list(tuple), list.append(), list.pop(), list.remove(), list.reverse(),
-# list.index(), sum(list), looping through list, list comprehensions
+# list.index(), sum(list), looping through list, list comprehensions, count()
 
 # Homogenous Lists
 listOfIntegers = [1, 2, 3, 8, 33]
@@ -242,3 +242,21 @@ print('List of squares using list comprehension: {}'.format(listOFSquares))
 
 # Expected output:
 # List of squares using list comprehension: [1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+
+# Count() Method
+# List Count
+list1 = ['red', 'green', 'blue', 'orange', 'green', 'gray', 'green']
+color_count = list1.count('green')
+print('The count of color: green is ', color_count)
+
+# Expected output
+# The count of color: green is  3
+
+
+# Find the count of elements (Duplicates) in a given list
+list1 = [2,3,4,3,10,3,5,6,3]
+elm_count = list1.count(3)
+
+# Expected output
+# The count of element: 3 is  4
