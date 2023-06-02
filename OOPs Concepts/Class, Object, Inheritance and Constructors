@@ -1,0 +1,55 @@
+# OOPs - Class, Object, Inheritance and Constructors
+
+# Class - a logical grouping of data and functions
+class myClass:
+    def method1(self):  # self-argument refers to the object itself
+        print("OOPs Concepts")
+
+    def method2(self, someString):
+        print("Python Programming:" + someString)
+
+c = myClass()  # create an object called "c" using the myClass() object
+c.method1()  # call a method from a class
+c.method2(" is fun")
+
+# Expected output
+# OOPs Concepts
+# Python Programming: is fun
+
+
+# Inheritance - refers to defining a new class with less or no modification to an existing class
+class myClass():
+    def method1(self):
+        print("OOPs Concepts")
+
+class childClass(myClass):
+    def method1(self):
+        myClass.method1(self)  # will call the method from myClass
+        print("childClass Method1")
+
+    def method2(self):
+        print("childClass method2")
+
+c2 = childClass()
+c2.method1()
+c2.method2()
+
+# Expected output
+# OOPs Concepts
+# childClass Method1
+# childClass method2
+
+
+# Constructors - is a class function that instantiates an object to predefined values
+# begins with a double underscore (_). It __init__() method
+class User:
+    name = ""
+
+    def __init__(self, name):
+        self.name = name
+
+    def sayhello(self):
+        print("Welcome to Python 101, " + self.name)
+
+User1 = User("Kay")
+User1.sayhello()
