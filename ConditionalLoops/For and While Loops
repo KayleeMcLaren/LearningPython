@@ -1,0 +1,96 @@
+# For and While Loops
+
+# While Loop
+x = 0
+while x < 4:
+    print(x)
+    x = x + 1
+
+# Expected output:
+# 0
+# 1
+# 2
+# 3
+
+
+# For Loop - also called iterators
+for x in range(1, 7):
+    print(x)
+
+# Expected output:
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+
+
+# For Loop for String
+Months = ["Jan", "Feb", "Mar", "April", "May", "June"]
+for m in Months:
+    print(m)
+
+# Expected output:
+# Jan
+# Feb
+# Mar
+# April
+# May
+# June
+
+
+# Break Statements in For Loop
+# use the break statement - allows you to break or terminate the execution of the for loop
+for x in range(10, 20):
+    if x == 15:
+        break
+    print(x)
+
+# Expected output:
+# 10
+# 11
+# 12
+# 13
+# 14
+
+# use the continue statement - will terminate the current iteration of the for loop
+# BUT will continue execution of the remaining iterations.
+for x in range(10, 20):
+    if x % 5 == 0:
+        continue
+    print(x)
+
+# Expected output:
+# 11
+# 12
+# 13
+# 14
+# 16
+# 17
+# 18
+# 19
+
+
+# Enumerate() - used for the numbering or indexing the members in the list
+Months = ["Jan", "Feb", "Mar", "April", "May", "June"]
+for i, m in enumerate(Months):
+    print(i, m)
+
+# Expected output:
+# 0 Jan
+# 1 Feb
+# 2 Mar
+# 3 April
+# 4 May
+# 5 June
+
+
+# Use For Loop to Repeat the Same Statement
+for i in '123':
+    print("sunshine", i)
+
+# Expected output:
+# sunshine 1
+# sunshine 2
+# sunshine 3
