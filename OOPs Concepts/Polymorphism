@@ -1,0 +1,143 @@
+# Polymorphism - concept wherein an object defined in Python can be used in different ways
+# allows the programmer to define multiple methods in a derived class,
+# and it has the same name as present in the parent class
+
+
+# Polymorphism in Operators - Operator Overloading (the + sign can add integers/floats as well as concatenate strings)
+p = 55
+q = 77
+r = 9.5
+g1 = "Python"
+g2 = "101"
+print("the sum of two numbers", p + q)
+print("the data type of result is", type(p + q))
+print("The sum of two numbers", q + r)
+print("the data type of result is", type(q + r))
+print("The concatenated string is", g1 + g2)
+print("The data type of two strings", type(g1 + g2))
+
+# Expected Output
+# the sum of two numbers 132
+# the data type of result is <class 'int'>
+# The sum of two numbers 86.5
+# the data type of result is <class 'float'>
+# The concatenated string is Python101
+# The data type of two strings <class 'str'>
+
+
+# Polymorphism in user-defined methods
+# As shown below, both circle class and square class invoke the same method name
+# displaying the characteristic of Polymorphism to deliver the required output
+from math import pi
+class Square:
+    # init method or constructor
+    def __init__(self, length):
+        self.l = length
+    def perimeter(self):
+        return 4 * self.l
+    def area(self):
+        return self.l * self.l
+
+class Circle:
+    def __init__(self, radius):
+        self.r = radius
+    def perimeter(self):
+        return 2 * pi * self.r
+    def area(self):
+        return pi * self.r ** 2
+
+# Initialize the classes
+sqr = Square(10)
+c1 = Circle(4)
+print("Perimeter computed for square: ", sqr.perimeter())
+print("Area computed for square: ", sqr.area())
+print("Perimeter computed for Circle: ", c1.perimeter())
+print("Area computed for Circle: ", c1.area())
+
+# Expected Output
+# Perimeter computed for square:  40
+# Area computed for square:  100
+# Perimeter computed for Circle:  25.132741228718345
+# Area computed for Circle:  50.26548245743669
+
+
+# Polymorphism in Functions
+# The built-in functions in Python are designed and made compatible to execute several data types.
+# In Python, Len() is one of the key built-in functions.
+print("The length of string Python101 is ", len("Python101"))
+print("The length of list is ", len(["Python101", "Polymorphism", "Programming"]))
+print("The length of dictionary is ", len({"Python": "101", "Type": "Education"}))
+
+# Expected Output
+# The length of string Python101 is  9
+# The length of list is  3
+# The length of dictionary is  2
+
+
+# Polymorphism and Inheritance
+# Inheritance in Python can be defined as the programming concept wherein a
+# child class defined inherit properties from another base class present in Python.
+class BaseClass:
+    def __init__(self, name):
+        self.name = name
+    def area1(self):
+        pass
+    def __str__(self):
+        return self.name
+
+class Rectangle(BaseClass):
+    def __init__(self, length, breadth):
+        super().__init__("rectangle")
+        self.length = length
+        self.breadth = breadth
+    def area1(self):
+        return self.length * self.breadth
+
+class Triangle(BaseClass):
+    def __init__(self, height, base):
+        super().__init__("triangle")
+        self.height = height
+        self.base = base
+    def area1(self):
+        return (self.base * self.height) / 2
+
+a = Rectangle(90, 80)
+b = Triangle(77, 64)
+print("The shape is: ", b)
+print("The area of shape is", b.area1())
+print("The shape is:", a)
+print("The area of shape is", a.area1())
+
+# Expected Output
+# The shape is:  triangle
+# The area of shape is 2464.0
+# The shape is: rectangle
+# The area of shape is 7200
+
+
+# Polymorphism with the Class Methods
+# The Python programming enables programmers to achieve Polymorphism and method overloading with class methods.
+# The different classes in Python can have methods that are declared in the same name across the Python code.
+class amazon:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+    def info(self):
+        print(f"The amazon class is invoked. The product name is {self.name}. This costs {self.price} dollars.")
+
+class ebay:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
+    def info(self):
+        print(f"The ebay class is invoked. The product name is {self.name}. This costs {self.price} dollars.")
+
+
+EBAY = ebay("Iphone", 2000)
+AMAZON = amazon("Iphone", 4000)
+for product1 in (EBAY, AMAZON):
+    product1.info()
+
+# Expected Output
+# The ebay class is invoked. The product name is Iphone. This costs 2000 dollars.
+# The amazon class is invoked. The product name is Iphone. This costs 4000 dollars.
