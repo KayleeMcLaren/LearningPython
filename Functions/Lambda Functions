@@ -1,0 +1,112 @@
+# Lambda Functions
+# A Lambda Function in Python programming is an anonymous function or a function having no name
+# It is a small and restricted function having no more than one line.
+# Every anonymous function you define in Python will have 3 essential parts:
+# The lambda keyword.
+# The parameters (or bound variables), and
+# The function body.
+
+# Example 1
+# Lambda keyword used to define an anonymous function
+# x and y are the parameters that we pass to the lambda function
+# The body of the function adds the 2 parameters we passed
+
+adder = lambda x, y: x + y
+print(adder(1, 2))  # We call the function and print the returned value
+
+# Expected output
+# 3
+
+
+# Example 2
+# Here, we define a string that you’ll pass as a parameter to the lambda.
+# We declare a lambda that calls a print statement and prints the result
+
+string = 'practising lambda functions'
+print(lambda string: print(string))
+
+# Expected output
+# <function <lambda> at 0x00000200788C04A0>
+
+# Why doesn’t the program print the string passed? This is because the lambda itself returns a function object.
+# The lambda is not being called by the print function but simply returning the function object and the
+# memory location where it is stored
+
+
+# Example 3
+x = "lambda function practice"
+(lambda x: print(x))(x)
+
+# Expected output
+# lambda function practice
+
+# Here is the same string we defined in the previous example.
+# In this part, we are defining a lambda and calling it immediately by passing the string as an argument.
+# This is something called an IIFE - Immediately-invoked function expressions (lambda function is callable as soon as it is defined)
+
+
+# Example 4
+#A REGULAR FUNCTION
+def python101(funct, *args):
+    funct(*args)
+def printer_one(arg):
+    return print(arg)
+def printer_two(arg):
+    print(arg)
+
+# CALL A REGULAR FUNCTION
+python101(printer_one, 'printer 1 REGULAR CALL')
+python101(printer_two, 'printer 2 REGULAR CALL \n')
+# CALL A REGULAR FUNCTION THRU A LAMBDA
+python101(lambda: printer_one('printer 1 LAMBDA CALL'))
+python101(lambda: printer_two('printer 2 LAMBDA CALL'))
+
+# Expected output
+# printer 1 REGULAR CALL
+# printer 2 REGULAR CALL
+#
+# printer 1 LAMBDA CALL
+# printer 2 LAMBDA CALL
+
+# A function called python101 that takes another function as the first parameter and any other arguments following it.
+# printer_one is a simple function which prints the parameter passed to it and returns it.
+# printer_two is similar to printer_one but without the return statement.
+# In this part, we are calling the python101 function and passing the printer functions and a string as parameters.
+# This is the syntax to achieve the fourth step (i.e., calling the python101 function) but using lambdas.
+
+
+# Using lambdas with Python built-in Functions
+
+# lambdas in filter() - used to select some particular elements from a sequence of elements
+sequences = [10, 2, 8, 7, 5, 4, 3, 11, 0, 1]
+# lambda function which runs on each element of the sequences list and returns true if it is greater than 4
+filtered_result = filter(lambda x: x > 4, sequences)
+print(list(filtered_result))
+
+# Expected output
+# [10, 8, 7, 5, 11]
+
+
+# lambdas in map() - used to apply a particular operation to every element in a sequence
+sequences = [10, 2, 8, 7, 5, 4, 3, 11, 0, 1]
+# lambda function which runs on each element of the list and returns the square of that number
+filtered_result = map(lambda x: x * x, sequences)
+print(list(filtered_result))
+
+# Expected output
+# [100, 4, 64, 49, 25, 16, 9, 121, 0, 1]
+
+
+# lambdas in reduce() - used to apply an operation to every element in a sequence. However, it differs from the map.
+# These are the steps followed by the reduce() function to compute an output:
+# Step 1) Perform the defined operation on the first 2 elements of the sequence.
+# Step 2) Save this result
+# Step 3) Perform the operation with the saved result and the next element in the sequence.
+# Step 4) Repeat until no more elements are left.
+from functools import reduce
+sequences = [1, 2, 3, 4, 5]
+product = reduce(lambda x, y: x * y, sequences)
+print(product)
+
+# Expected output
+# 120
