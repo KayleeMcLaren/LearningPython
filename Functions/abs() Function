@@ -1,0 +1,22 @@
+# abs() Function - absolute value
+# Python abs() returns the absolute value for the given number.
+# Absolute value of a number is the value without considering its sign.
+
+
+# Example 1: Integer and Float number
+int_num = -25
+float_num = -10.50
+print("The absolute value of an integer number is:", abs(int_num))
+print("The absolute value of a float number is:", abs(float_num))
+
+# Expected output
+# The absolute value of an integer number is: 25
+# The absolute value of a float number is: 10.5
+
+
+# Example 2: Complex Number
+complex_num = (3 + 10j)
+print("The magnitude of the complex number is:", abs(complex_num))
+
+# Expected output
+# The magnitude of the complex number is: 10.44030650891055
