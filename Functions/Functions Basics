@@ -1,0 +1,33 @@
+# Functions Basics
+# A function is a piece of code which runs when it is referenced
+
+# define a function using “def” statement followed by the function name and parentheses ( )
+def func1():
+    # Python functions don’t have any explicit begin or end like curly braces to indicate the start
+    # and stop for the function, they have to rely on this indentation
+    print("I am learning Python functions")
+    print("still in func1")
+
+func1()
+
+def square(x):  # The argument is a value that is passed to the function when it’s called
+    return x * x  # Return command in Python specifies what value to give back to the caller of the function
+
+print(square(4))
+
+def multiply(x, y=0):
+    print("value of x=", x)
+    print("value of y=", y)
+
+    return x * y
+
+print(multiply(y=2, x=4))
+
+
+# Expected output
+# I am learning Python functions
+# still in func1
+# 16
+# value of x= 4
+# value of y= 2
+# 8
