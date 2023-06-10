@@ -1,0 +1,122 @@
+# Timeit() Function
+# Python timeit() is a method in Python library to measure the execution time taken by the given code snippet.
+# The Python library runs the code statement 1 million times and provides the minimum time taken from the given set of code snippets.
+# Python timeit() is a useful method that helps in checking the performance of the code.
+
+# Syntax:
+# timeit.timeit(stmt, setup, timer, number)
+
+import timeit
+print(timeit.timeit('output = 10*5'))
+
+# Expected output
+# 0.02809389983303845
+
+
+# Timing Multiple lines in python code
+# Example 1: Using semicolon
+
+import timeit
+print("The time taken is ",timeit.timeit(stmt='a=10;b=10;sum=a+b'))
+
+# Expected output
+# The time taken is  0.0814638000447303
+
+# Example 2: Using triple quotes
+import timeit
+import_module = "import random"
+testcode = ''' 
+def test(): 
+    return random.randint(10, 100)
+'''
+print(timeit.repeat(stmt=testcode, setup=import_module))
+
+# Expected output
+# [0.15779960015788674, 0.1473444001749158, 0.13532810006290674, 0.15796980005688965, 0.16407759999856353]
+
+
+# timeit – Methods:
+# timeit.default_timer() : This will return the default time when executed.
+# timeit.repeat(stmt, setup, timer, repeat, number) : same as timeit(),
+# but with repeat the timeit() is called the number of times repeat is given.
+
+# Example 1:
+import timeit
+import_module = "import random"
+testcode = ''' 
+def test(): 
+     return random.randint(10, 100)
+ '''
+print(timeit.timeit(stmt=testcode, setup=import_module))
+
+# Expected output
+# 0.15152349998243153
+
+
+# Example 2: default_timer()
+import timeit
+import random
+
+def test():
+    return random.randint(10, 100)
+
+starttime = timeit.default_timer()
+print("The start time is :", starttime)
+test()
+print("The time difference is :", timeit.default_timer() - starttime)
+
+# Expected output
+# The start time is : 1300143.0567524
+# The time difference is : 9.189988486468792e-05
+
+
+# Example 3: timeit.repeat()
+import timeit
+import_module = "import random"
+testcode = ''' 
+def test(): 
+    return random.randint(10, 100)
+'''
+print(timeit.repeat(stmt=testcode, setup=import_module, repeat=5))
+
+# Expected output
+# [0.1613628000486642, 0.2025960001628846, 0.1804418999236077, 0.15352070005610585, 0.2141549999359995]
+
+# timeit.repeat() works similar to timeit.timeit() function, with the only difference it takes in the repeat
+# argument and gives back the execution time in array format with values as per the repeat number.
+
+
+# Executing timing function timeit.timeit() inside command-line interface
+# The syntax to execute your function inside timeit() on the command line is as follows:
+# python -m timeit [-n N] [-r N] [-s S] [-t] [-c] [-h] [code statement ...]
+
+# Command line parameters:
+# -n N: the number of times you want the code to execute.
+# -r N: the number of times you want the timeit() function to repeat
+# -s S: this will have setup details that will get executed before code execution.
+# -t: for this, you can make use of time.time()
+# -c: for this, you can make use of time.clock()
+# -h: for help
+# code statement: The code details.
+
+# Example 1:
+# C:\pythontest>python -m timeit -s 'text="hello world"'
+# 20000000 loops, best of 5: 13.1 nsec per loop
+
+# Example 2:
+# >>> import timeit
+# >>> print("The time taken is ",timeit.timeit(stmt='a=10;b=10;sum=a+b'))
+# The time taken is  0.15048536300000137
+# >>>
+
+
+# Why is timeit() the best way to measure the execution time of Python code?
+# Here are a few reasons why we consider timeit() is the best way to measure execution time:
+
+# It runs the code statement 1 million times that is the default value, and from that,
+# it will return you the minimum time taken. You can also increase/decrease the 1 million by setting the argument number in time () function.
+
+# While executing the test, the garbage collection is disabled every time by time () function.
+
+# timeit() internally takes the accurate time as per your operating system being used.
+# For example, it will use time.clock() for Windows operating system and time.time() for mac and Linux.
