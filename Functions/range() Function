@@ -1,0 +1,195 @@
+# range() Function
+
+# range() gives a sequence of numbers based on the start and stop index given.
+# In case the start index is not given, the index is considered as 0,
+# and it will increment the value by 1 until the stop index.
+
+# Using range()
+# Since the start is not given the start is considered as 0 and the last value is given till 9.
+# The last value is always 1 less than the given value i.e. stop-1.
+for i in range(10):
+    print(i, end=" ")
+
+# Expected output
+# 0 1 2 3 4 5 6 7 8 9
+
+
+# Using start and stop in range()
+# Here the start index is 3, so the sequence of numbers will start from 3 till the stop value.
+# The last value in the sequence will be 1 less than the stop value 10-1 = 9.
+for i in range(3, 10):
+    print(i, end=" ")
+
+# Expected output
+# 3 4 5 6 7 8 9
+
+
+# Using start, stop and step
+# The step is 2, so each value in the sequence will be incremented by 2.
+# If the step value is not given, the value for step defaults to 1.
+for i in range(3, 10, 2):
+    print(i, end=" ")
+
+# Expected output
+# 3 5 7 9
+
+
+# Incrementing the values in range using a positive step
+for i in range(1, 30, 5):
+    print(i, end=" ")
+
+# Expected output
+# 1 6 11 16 21 26
+
+# Reverse Range: Decrementing the values using negative step
+# The step value is negative so the output will be in decremented from the range value given (15 to 5).
+for i in range(15, 5, -1):
+    print(i, end=" ")
+
+# Expected output
+# 15 14 13 12 11 10 9 8 7 6
+
+
+# Using floating numbers in Python range()
+# Python gives an error as the range() function does not support floating-point numbers for start, stop and step.
+for i in range(10.5):
+    print(i, end=" ")
+
+# Expected output
+# Traceback (most recent call last):
+#   File "python_range.py", line 1, in <module>
+#     for i in range(10.5):
+# TypeError: 'float' object cannot be interpreted as an integer
+
+
+# Using for-loop with Python range()
+# The for loop will iterate until the stop value i.e the length of the array and that will be 4 (4 items in the array)
+# The start value will be 0 and step will be 1.
+# So the values will start from 0 and will stop at 3 i.e length of array -1 (4 -1 = 3)
+arr_list = ['Mysql', 'Mongodb', 'PostgreSQL', 'Firebase']
+
+for i in range(len(arr_list)):
+    print(arr_list[i], end=" ")
+
+# Expected output
+# Mysql Mongodb PostgreSQL Firebase
+
+
+# Using Python range() as a list
+print(list(range(10)))
+
+# Expected output
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+# Using characters in python range()
+# It throws an error saying a string cannot be interpreted as an integer.
+for c in range('z'):
+    print(c, end=" ")
+
+# Expected output
+# Traceback (most recent call last):
+#   File "python_range.py", line 1, in <module>
+#     for c in range ('z'):
+# TypeError: 'str' object cannot be interpreted as an integer
+
+# To get the list of the alphabets you can customize the code and get the desired output as shown below:
+def get_alphabets(startletter, stopletter, step):
+    for c in range(ord(startletter.lower()), ord(stopletter.lower()), step):
+        yield chr(c)
+
+print(list(get_alphabets("a", "h", 1)))
+
+# Expected output
+# ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+
+# How to Access Range Elements:
+
+# Using for-loop
+for i in range(6):
+    print(i)
+
+# Expected output
+# 0
+# 1
+# 2
+# 3
+# 4
+# 5
+
+
+# Using index
+# The index is used with range to get the value available at that position.
+# If the range value is 5, to get the startvalue, you can use range(5)[0] and the next value range(5)[1] and so on.
+startvalue = range(5)[0]
+print("The first element in range is = ", startvalue)
+secondvalue = range(5)[1]
+print("The second element in range is = ", secondvalue)
+lastvalue = range(5)[-1]
+print("The first element in range is = ", lastvalue)
+
+# Expected output
+# The first element in range is =  0
+# The second element in range is =  1
+# The first element in range is =  4
+
+
+# Using list()
+# This method will print all the elements from the range().
+# Using list() it will return the elements from range() in list format.
+print(list(range(10)))
+
+# Expected output
+# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+# Get even numbers using range()
+# The parameters for range() are, start is 2, stop is 20, and step is 2,
+# so the values will be incremented by 2 and will give even numbers until stop - 2.
+for i in range(2, 20, 2):
+    print(i, end=" ")
+
+# Expected output
+# 2 4 6 8 10 12 14 16 18
+
+
+# Merging two-range() outputs
+# This example will concatenate 2 range() functions with the help of itertools module chain() function.
+from itertools import chain
+
+print("Merging two ranges into one")
+ranges = chain(range(10), range(10, 20, 1))
+for i in ranges:
+    print(i, end=" ")
+
+# Expected output
+# Merging two ranges into one
+# 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+
+
+# Using range() With NumPy
+# The NumPy module has the arrange() function that works like and gives a similar output like range().
+# The arrange() takes in the same parameters as range()
+import numpy as np
+
+for i in np.arange(10):
+    print(i, end=" ")
+
+# Expected output
+# 0 1 2 3 4 5 6 7 8 9
+
+
+# Floating point numbers using NumPy arrange()
+# It is not possible to get the floating point sequence using range(), but it is possible using NumPy arrange().
+import numpy as np
+
+for i in np.arange(0.5, 1.5, 0.2):
+    print(i, end=" ")
+
+# Expected output
+# 0.5 0.7 0.8999999999999999 1.0999999999999999 1.2999999999999998
+
+# The output we get is a little weird, some of the float numbers are shown with 16 decimal places.
+# This happens because of the complexity of storing decimal floating numbers into binary format.
+# You can also round the values if required and limit them to the decimal places you need.
