@@ -1,0 +1,151 @@
+# round() Function
+#  Will return you a float number that will be rounded to the decimal places which are given as input.
+# If the decimal places to be rounded are not specified, it is considered as 0, and it will round to the nearest integer.
+
+print(round(5.2465736))
+print(round(5.2465736, 2))
+
+# Expected output
+# 5
+# 5.25
+
+
+# Rounding vs Truncation
+# The truncate() method resizes the file to the given number of bytes.
+# If the size is not specified, the current position will be used.
+
+def truncate(num):
+    return int(num * 1000) / 1000
+
+arr = [random.uniform(0.01, 0.05) for _ in range(1000000)]
+sum_num = 0
+sum_truncate = 0
+for i in arr:
+    sum_num = sum_num + i
+    sum_truncate = truncate(sum_truncate + i)
+
+print("\nTesting by using truncating up to 3 decimal places")
+print("The original sum is = ", sum_num)
+print("The total using truncate = ", sum_truncate)
+print("The difference from original - truncate = ", sum_num - sum_truncate)
+
+print("\nTesting by using round() up to 3 decimal places")
+sum_num1 = 0
+sum_truncate1 = 0
+for i in arr:
+    sum_num1 = sum_num1 + i
+    sum_truncate1 = round(sum_truncate1 + i, 3)
+
+print("The original sum is =", sum_num1)
+print("The total using round = ", sum_truncate1)
+print("The difference from original - round =", sum_num1 - sum_truncate1)
+
+# Expected output
+
+# Testing by using truncating up to 3 decimal places
+# The original sum is =  29995.635916969262
+# The total using truncate =  29495.596
+# The difference from original - truncate =  500.03991696926096
+
+# Testing by using round() up to 3 decimal places
+# The original sum is = 29995.635916969262
+# The total using round =  29995.695
+# The difference from original - round = -0.059083030737383524
+
+
+# Rounding Float Numbers
+float_num1 = 10.60  # here the value will be rounded to 11 as after the decimal point the number is 6 that is >5
+float_num2 = 10.40  # here the value will be rounded to 10 as after the decimal point the number is 4 that is <=5
+float_num3 = 10.3456  # here the value will be 10.35 as after the 2 decimal points the value >=5
+float_num4 = 10.3445  # here the value will be 10.34 as after the 2 decimal points the value is <5
+
+print("The rounded value without num_of_decimals is :", round(float_num1))
+print("The rounded value without num_of_decimals is :", round(float_num2))
+print("The rounded value with num_of_decimals as 2 is :", round(float_num3, 2))
+print("The rounded value with num_of_decimals as 2 is :", round(float_num4, 2))
+
+# Expected output
+# The rounded value without num_of_decimals is : 11
+# The rounded value without num_of_decimals is : 10
+# The rounded value with num_of_decimals as 2 is : 10.35
+# The rounded value with num_of_decimals as 2 is : 10.34
+
+
+# Rounding Integer Values
+# If you happen to use round() on an integer value, it will just return you the number back without any changes.
+num = 15
+print("The output is", round(num))
+
+# Expected output
+# The output is 15
+
+
+# Rounding on Negative Numbers
+num = -2.8
+num1 = -1.5
+print("The value after rounding is", round(num))
+print("The value after rounding is", round(num1))
+
+# Expected output
+# The value after rounding is -3
+# The value after rounding is -2
+
+
+# Round Numpy Arrays
+import numpy as np
+
+arr = [-0.341111, 1.455098989, 4.232323, -0.3432326, 7.626632, 5.122323]
+arr1 = np.round(arr, 2)
+print(arr1)
+
+# Expected output
+# [-0.34  1.46  4.23 -0.34  7.63  5.12]
+
+
+# Decimal Module
+# In addition to the round() function, the decimal module helps in handling decimal numbers more accurately.
+
+# The Decimal module comes with rounding types, as shown below :
+# ROUND_CEILING: it will round towards Infinity,
+# ROUND_DOWN: it will round the value towards zero,
+# ROUND_FLOOR: it will round towards -Infinity,
+# ROUND_HALF_DOWN: it will round to nearest value going towards zero,
+# ROUND_HALF_EVEN: it will round to nearest with value going to nearest even integer,
+# ROUND_HALF_UP: it will round to nearest with value going away from zero
+# ROUND_UP: it will round where the value will go away from zero.
+
+# In decimal, the quantize() method helps to round to a fixed number of decimal places,
+# and you can specify the rounding to be used, as shown in the example below.
+
+import decimal
+
+round_num = 15.456
+final_val = round(round_num, 2)
+
+#Using decimal module
+final_val1 = decimal.Decimal(round_num).quantize(decimal.Decimal('0.00'), rounding=decimal.ROUND_CEILING)
+final_val2 = decimal.Decimal(round_num).quantize(decimal.Decimal('0.00'), rounding=decimal.ROUND_DOWN)
+final_val3 = decimal.Decimal(round_num).quantize(decimal.Decimal('0.00'), rounding=decimal.ROUND_FLOOR)
+final_val4 = decimal.Decimal(round_num).quantize(decimal.Decimal('0.00'), rounding=decimal.ROUND_HALF_DOWN)
+final_val5 = decimal.Decimal(round_num).quantize(decimal.Decimal('0.00'), rounding=decimal.ROUND_HALF_EVEN)
+final_val6 = decimal.Decimal(round_num).quantize(decimal.Decimal('0.00'), rounding=decimal.ROUND_HALF_UP)
+final_val7 = decimal.Decimal(round_num).quantize(decimal.Decimal('0.00'), rounding=decimal.ROUND_UP)
+
+print("Using round()", final_val)
+print("Using Decimal - ROUND_CEILING ", final_val1)
+print("Using Decimal - ROUND_DOWN ", final_val2)
+print("Using Decimal - ROUND_FLOOR ", final_val3)
+print("Using Decimal - ROUND_HALF_DOWN ", final_val4)
+print("Using Decimal - ROUND_HALF_EVEN ", final_val5)
+print("Using Decimal - ROUND_HALF_UP ", final_val6)
+print("Using Decimal - ROUND_UP ", final_val7)
+
+# Expected output
+# Using round() 15.46
+# Using Decimal - ROUND_CEILING  15.46
+# Using Decimal - ROUND_DOWN  15.45
+# Using Decimal - ROUND_FLOOR  15.45
+# Using Decimal - ROUND_HALF_DOWN  15.46
+# Using Decimal - ROUND_HALF_EVEN  15.46
+# Using Decimal - ROUND_HALF_UP  15.46
+# Using Decimal - ROUND_UP  15.46
