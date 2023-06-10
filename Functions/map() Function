@@ -1,0 +1,149 @@
+# map() Function
+# Python map() applies a function on all the items of an iterator given as input.
+# An iterator, for example, can be a list, tuple, set, dictionary, string, and it returns an iterable map object.
+
+# How map() function works?
+# The map() function takes two inputs as a function and an iterable object.
+# The function that is given to map() is a normal function,
+# and it will iterate over all the values present in the iterable object given.
+def square(n):
+    return n * n
+
+my_list = [2, 3, 4, 5, 6, 7, 8, 9]
+updated_list = map(square, my_list)
+print(list(updated_list))
+
+# Expected output
+# [4, 9, 16, 25, 36, 49, 64, 81]
+
+
+# Using map() with Python built-in functions
+# This example makes use of Python round() built-in function that rounds the values given.
+my_list = [2.6743, 3.63526, 4.2325, 5.9687967, 6.3265, 7.6988, 8.232, 9.6907]
+updated_list = map(round, my_list)
+print(list(updated_list))
+
+# Expected output
+# [3, 4, 4, 6, 6, 8, 8, 10]
+
+
+# Using map() with a string as an iterator
+# In Python, a string acts like an array, so we can easily use it inside the map().
+# The function myMapFunc () is given to map() function.
+# The map function will take care of converting the string given to uppercase by passing the string to myMapFunc()
+def myMapFunc(s):
+    return s.upper()
+
+my_str = "Welcome to Python101!"
+updated_list = map(myMapFunc, my_str)
+
+for i in updated_list:
+    print(i, end="")
+
+# Expected output
+# WELCOME TO PYTHON101!
+
+
+# Using map() with list of Numbers
+# To work with the list in map() will take a list of numbers and multiply each number in the list by 10.
+def myMapFunc(n):
+    return n * 10
+
+my_list = [2, 3, 4, 5, 6, 7, 8, 9]
+
+updated_list = map(myMapFunc, my_list)
+print(list(updated_list))
+
+# Expected output
+# [20, 30, 40, 50, 60, 70, 80, 90]
+
+
+# Using map() with Tuple
+def myMapFunc(n):
+    return n.upper()
+
+my_tuple = ('php', 'java', 'python', 'c++', 'c')
+
+updated_list = map(myMapFunc, my_tuple)
+print(list(updated_list))
+
+# Expected output
+# ['PHP', 'JAVA', 'PYTHON', 'C++', 'C']
+
+
+# Using map() with Dictionary
+# A dictionary in Python is created using curly brackets({}).
+# Since the dictionary is an iterator, you can make use of it inside map() function.
+# Let's use a dictionary as an iterator inside map() function.
+
+def myMapFunc(n):
+    return n * 10
+
+my_dict = {2, 3, 4, 5, 6, 7, 8, 9}
+finalitems = map(myMapFunc, my_dict)
+print(list(finalitems))
+
+# Expected output
+# [20, 30, 40, 50, 60, 70, 80, 90]
+
+
+# Using map() with Set
+# Set in Python is an unordered collection of items in curly brackets(()).
+# Since set() is also an iterator, you can make use of it inside map() function.
+def myMapFunc(n):
+    return n*10
+my_set = {2, 3, 4, 5, 6, 7, 8, 9}
+finalitems = map(myMapFunc, my_set)
+print(list(finalitems))
+
+# Expected output
+# [20, 30, 40, 50, 60, 70, 80, 90]
+
+
+# Using map() with Lambda function
+# In Python, lambda expressions are utilized to construct anonymous functions.
+# You will have to use the lambda keyword just as you use def to define normal functions.
+# The lambda function will multiply each value in the list with 10.
+my_list = [2, 3, 4, 5, 6, 7, 8, 9]
+updated_list = map(lambda x: x * 10, my_list)
+print(list(updated_list))
+
+# Expected output
+# [20, 30, 40, 50, 60, 70, 80, 90]
+
+
+# Using Multiple Iterators inside map() function
+
+# Example 1: Passing two list iterators to map()
+# If you want to add two lists of integers together. This can be done using the map() function.
+# We are going to make use of two lists my_list1 and my_list2.
+# The first item in the my_list1 is added to the first item of my_list2.
+# The function myMapFunc() takes in items of my_list1 and my_list2 and returns the sum of both.
+def myMapFunc(list1, list2):
+    return list1+list2
+
+my_list1 = [2, 3, 4, 5, 6, 7, 8, 9]
+my_list2 = [4, 8, 12, 16, 20, 24, 28]
+
+updated_list = map(myMapFunc, my_list1, my_list2)
+print(list(updated_list))
+
+# Expected output
+# [6, 11, 16, 21, 26, 31, 36]
+
+
+# Example 2: Passing one Tuple and a list iterator to map()
+# We are going to make use of a list and a tuple iterator in map() function.
+# The function is given to map – myMapFunc() will get the items from the list and Tuple.
+# The items will be joined with an underscore(_)
+def myMapFunc(list1, tuple1):
+    return list1+"_"+tuple1
+
+my_list = ['a', 'b', 'c', 'd', 'e']
+my_tuple = ('PHP', 'Java', 'Python', 'C++', 'C')
+
+updated_list = map(myMapFunc, my_list,my_tuple)
+print(list(updated_list))
+
+# Expected output
+# ['a_PHP', 'b_Java', 'c_Python', 'd_C++', 'e_C']
