@@ -1,0 +1,59 @@
+# Check if File Exists
+
+# exists() Method - is used to check whether specific file or directory exists or not.
+# It is also used to check if a path refers to any open file descriptor or not.
+# It returns boolean value true if file exists and returns false otherwise
+# It is used with os module and os.path sub module as os.path.exists(path)
+
+# How to Check If a File Exists in Python using os.path.exists()
+
+from os import path
+
+print("File exists: " + str(path.exists('example.txt')))
+print("File exists: " + str(path.exists('example.one.txt')))
+print("directory exists: " + str(path.exists('myDirectory')))
+
+
+# Expected output:
+# File exists: True
+# File exists: False
+# directory exists: False
+
+
+# isfile() - used to find whether a given path is an existing regular file or not.
+# It returns a boolean value true if the specific path is an existing file or else it returns false.
+# It can be used by the syntax : os.path.isfile(path)
+
+# os.path.isfile()
+from os import path
+
+print("Is it a File?" + str(path.isfile('example.txt')))
+print("Is it a File?" + str(path.isfile('myDirectory')))
+
+# Expected output:
+# Is it a File? True
+# Is it a File? False
+
+
+# os.path.isdir()
+from os import path
+
+print("Is it a Directory?" + str(path.isdir('guru99.txt')))
+print("Is it a Directory?" + str(path.isdir('myDirectory')))
+
+# Expected output:
+# Is it a Directory? False
+# Is it a Directory? True
+
+
+# pathlibPath.exists() -  uses object-oriented approach to Python check if folder exists or not
+import pathlib
+
+file = pathlib.Path("example.txt")
+if file.exists():
+    print("File exists")
+else:
+    print("File does not exist")
+
+# Expected output:
+# File exists
