@@ -1,0 +1,35 @@
+# readline() Method - helps to read one complete line from the given file.
+# It has a trailing newline (“\n”) at the end of the string returned.
+
+# Step 1) - First, open the file using the file open() method
+myfile = open("demo.txt", "r")
+
+# Step 2) - Use the readline() method to read the line from the file demo.txt
+myline = myfile.readline()
+
+# Step 3) - The line read is stored inside myline. Print the line to see the details
+print(myline)
+
+# Step 4) - Once the reading is done, close the file using close() method
+myfile.close()
+
+
+# Using size argument in readline()
+# You can also make use of the size parameter to get only the required length of the line
+myfile = open("demo.txt", "r")
+myline = myfile.readline(10)  # has the size parameter 10
+print(myline)  # The first line will be fetched, and it will return the line with characters from 0 to 10.
+myfile.close()
+
+
+# Read a File Line-by-Line
+# The readline() method helps to read just one line at a time, and it returns the first line from the file given.
+# Here, we will make use of readline() to read all the lines from the file given.
+# Using readline() inside while-loop will take care of reading all the lines present
+
+myfile = open("demo.txt", "r")
+myline = myfile.readline()
+while myline:
+    print(myline)
+    myline = myfile.readline()
+myfile.close()  
