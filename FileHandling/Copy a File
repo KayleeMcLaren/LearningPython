@@ -9,8 +9,8 @@ import time
 
 # Step 1) Capture the original path in the current directory
 # make a duplicate of an existing file
-if path.exists("guru99.txt"):  # check if file exists
-    src = path.realpath("guru99.txt")  # store the file path in the variable “src”
+if path.exists("example.txt"):  # check if file exists
+    src = path.realpath("example.txt")  # store the file path in the variable “src”
 
 # Once you get the path, separate the path and the file name
 head, tail = path.split(src)  # use the path.split function on src variable
@@ -33,7 +33,7 @@ shutil.copystat(src, dst)
 # You can fetch the information about the text file last modified
 # Get the modification time
 # It tells the day, date, month, year and time when .txt file was last modified.
-t = time.ctime(path.getmtime("guru99.txt.bak"))  #  use the time classes c time function to convert that into a readable time
+t = time.ctime(path.getmtime("example.txt.bak"))  #  use the time classes c time function to convert that into a readable time
 print(t)
 #  Get Modification Time function - gets the same information about file modification but it has a different format to represent it
-print(datetime.datetime.fromtimestamp(path.getmtime("guru99.txt.bak")))  # From Time Stamp function - constructs a date time object
+print(datetime.datetime.fromtimestamp(path.getmtime("example.txt.bak")))  # From Time Stamp function - constructs a date time object
