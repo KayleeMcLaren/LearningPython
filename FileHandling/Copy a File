@@ -1,0 +1,39 @@
+# Copy File Methods - shutil.copy(), shutil.copystat() method
+
+# How to Copy a File in Python
+import shutil
+from os import path
+import datetime
+from datetime import date, time, timedelta
+import time
+
+# Step 1) Capture the original path in the current directory
+# make a duplicate of an existing file
+if path.exists("guru99.txt"):  # check if file exists
+    src = path.realpath("guru99.txt")  # store the file path in the variable “src”
+
+# Once you get the path, separate the path and the file name
+head, tail = path.split(src)  # use the path.split function on src variable
+# prints out “file name” and “file path” separately
+print("path:" + head)
+print("file:" + tail)
+
+# Step 2) Create a copy of our existing file using shutil module
+# make a backup copy by appending "bak" to the name - this is the duplicate copy
+dst = src + ".bak"
+# now use the shell to make a copy of the file
+shutil.copy(src, dst)
+# When you run the code, you will see a duplicate file with .bak extension is created on right-hand side of the panel
+
+# Step 3) Copy meta-data associated with the file, file permission and other information
+# copy over the permissions, modification
+shutil.copystat(src, dst)
+
+# Step 4) Fetch the information
+# You can fetch the information about the text file last modified
+# Get the modification time
+# It tells the day, date, month, year and time when .txt file was last modified.
+t = time.ctime(path.getmtime("guru99.txt.bak"))  #  use the time classes c time function to convert that into a readable time
+print(t)
+#  Get Modification Time function - gets the same information about file modification but it has a different format to represent it
+print(datetime.datetime.fromtimestamp(path.getmtime("guru99.txt.bak")))  # From Time Stamp function - constructs a date time object
